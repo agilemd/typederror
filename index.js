@@ -18,6 +18,7 @@ function typedError(name, defaults) {
     });
 
     this.name = name;
+
     if (defaults.code) {
       this.code = defaults.code;
     }
@@ -36,7 +37,6 @@ function typedError(name, defaults) {
       this.inner = inner;
     }
 
-    return err;
   }
   e.prototype = Error.prototype;
 
