@@ -1,0 +1,27 @@
+{
+  "name": "typederror",
+  "version": "0.1.0",
+  "description": "custom error type creator: throw new CustomError()",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "mocha": "~1.8.1",
+    "chai": "~1.5.0"
+  },
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AgileDiagnosis/typederror.git"
+  },
+  "keywords": [
+    "error"
+  ],
+  "contributors": ["jden <jason@denizac.org"],
+  "author": "Agile Diagnosis <hello@agilediagnosis.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
