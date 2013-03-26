@@ -15,6 +15,9 @@ function typedError(name, defaults) {
       get: function () {
         return err.stack;
       }
+      ,set: function (val) {
+        err.stack = val;
+      }
     });
 
     this.name = name;

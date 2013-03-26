@@ -66,4 +66,13 @@ describe('TypedError', function () {
     e.inner.should.equal(innerE)
   })
 
+  it('stack property can be modified after it is accessed', function () {
+    'use strict';
+    var E = typedError('E')
+    var e = new E()
+    var originalStack = e.stack
+    e.stack = 'dsfkuhskdf'
+    e.stack.should.equal('dsfkuhskdf')
+  })
+
 })
