@@ -8,14 +8,16 @@ function typedError(name, defaults) {
     }
 
     var err = new Error();
-
+    var self = this;
     Object.defineProperty(this, 'stack', {
       configurable: true,
       enumerable: false,
       get: function () {
-        return err.stack;
+        var stack = err.stack;
+        stack = stack.substring(nthIndexOf(stack, '\n', 3));
+        return self.toString() + stack;
       }
-      ,set: function (val) {
+    , set: function (val) {
         err.stack = val;
       }
     });
@@ -47,3 +49,12 @@ function typedError(name, defaults) {
 }
 
 module.exports = typedError
+
+function nthIndexOf(string, match, n) {
+  var index = -1
+  while (n--) {
+    index = string.indexOf(match, index + 1)
+  }
+
+  return index
+}
