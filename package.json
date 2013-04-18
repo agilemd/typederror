@@ -1,6 +1,6 @@
 {
   "name": "typederror",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "custom error type creator: throw new CustomError()",
   "main": "index.js",
   "directories": {
