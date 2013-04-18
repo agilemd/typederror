@@ -9,16 +9,20 @@ function typedError(name, defaults) {
 
     var err = new Error();
     var self = this;
+    var stack
+
     Object.defineProperty(this, 'stack', {
       configurable: true,
       enumerable: false,
       get: function () {
-        var stack = err.stack;
+        if (stack) return stack
+        stack = err.stack;
         stack = stack.substring(nthIndexOf(stack, '\n', 3));
-        return self.toString() + stack;
+        stack = self.toString() + stack;
+        return stack
       }
     , set: function (val) {
-        err.stack = val;
+        stack = val;
       }
     });
 
