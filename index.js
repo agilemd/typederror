@@ -47,7 +47,7 @@ function typedError(name, defaults) {
     }
 
   }
-  e.prototype = Error.prototype;
+  e.prototype = new Error();
 
   return e;
 }

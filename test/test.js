@@ -39,6 +39,11 @@ describe('TypedError', function () {
     err.should.be.instanceof(Error)
   })
 
+  it('is not the superclass of Error', function () {
+    var MyError = typedError('MyError')
+    new Error().should.not.be.instanceof(MyError)
+  })
+
   it('has stack traces', function () {
     var MyError = typedError('MyError')
     var err = new MyError()
